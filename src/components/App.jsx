@@ -14,9 +14,11 @@ function App() {
   function remove(index) {
     setitems(additems.filter(item => item.index !== index));
   }
+  const[isDone,setDone]=useState("");
   function strike(){
     // setitems(additems.filter(<style> text-Decoration:linethrough</style>))
-document.getElementById("mn").style.textDecoration = "line-through";
+// document.getElementById("mn").style.textDecoration = "line-through";
+setDone("true");
 // setitems(additems.map((ite,index)=>(
 // style:textDecoration="line-through";
 // )))
@@ -36,7 +38,7 @@ document.getElementById("mn").style.textDecoration = "line-through";
       <div >
         <ul>
           {additems.map((items, index) => (
-            <li id="mn" onClick={()=>(setitems(additems.filter(item=>additems.indexOf(item)!==index)))}>
+            <li onClick={strike} style={{textDecoration:isDone ? "line-through":"none"}} id="mn" onClick={()=>(setitems(additems.filter(item=>additems.indexOf(item)!==index)))}>
               {items}
               
             </li>
