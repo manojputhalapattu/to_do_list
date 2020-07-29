@@ -77,6 +77,8 @@ li {
   position: relative;
   padding: 0.5rem;
 }
-.mn:active {
+button:visited,
+button:focus,
+button:active {
   text-decoration: line-through;
 }

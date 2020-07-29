@@ -14,6 +14,13 @@ function App() {
   function remove(index) {
     setitems(additems.filter(item => item.index !== index));
   }
+  function strike(){
+    // setitems(additems.filter(<style> text-Decoration:linethrough</style>))
+document.getElementById("mn").style.textDecoration = "line-through";
+// setitems(additems.map((ite,index)=>(
+// style:textDecoration="line-through";
+// )))
+  }
 
   return (
     <div className="container">
@@ -26,14 +33,18 @@ function App() {
           <span>Add</span>
         </button>
       </div>
-      <div>
+      <div >
         <ul>
           {additems.map((items, index) => (
-            <li className="mn" onClick={()=>(setitems(additems.filter(item=>additems.indexOf(item)!==index)))}>
+            <li id="mn" onClick={()=>(setitems(additems.filter(item=>additems.indexOf(item)!==index)))}>
               {items}
+              
             </li>
           ))}
+          
         </ul>
+        <button onClick={strike}>strike off</button>
+
       </div>
     </div>
   );
